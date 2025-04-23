@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with gradient -->
+  <circle cx="256" cy="256" r="240" fill="url(#grad1)" />
+  
+  <!-- Outer ring -->
+  <circle cx="256" cy="256" r="220" stroke="url(#ringGrad)" stroke-width="4" fill="none" />
+  
+  <!-- Tech pattern circle -->
+  <circle cx="256" cy="256" r="190" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity="0.4" />
+  
+  <!-- Inner circle highlighting the "O" -->
+  <circle cx="256" cy="256" r="120" fill="url(#innerGrad)" opacity="0.9" />
+  
+  <!-- Big "O" in the center -->
+  <path d="M256 336C300.183 336 336 300.183 336 256C336 211.817 300.183 176 256 176C211.817 176 176 211.817 176 256C176 300.183 211.817 336 256 336Z" stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- "dev" text -->
+  <path d="M149 237C149 228.163 156.163 221 165 221H175C183.837 221 191 228.163 191 237V275C191 283.837 183.837 291 175 291H165C156.163 291 149 283.837 149 275V237Z" fill="white"/>
+  <path d="M149 256L175 221H165C156.163 221 149 228.163 149 237V275C149 283.837 156.163 291 175 291H165C156.163 291 149 283.837 149 275V256Z" fill="#60A5FA"/>
+  <path d="M200 230C200 225.582 203.582 222 208 222H225C234.389 222 242 229.611 242 239V239C242 248.389 234.389 256 225 256H208V275C208 283.837 215.163 291 224 291H208C203.582 291 200 287.418 200 283V230Z" fill="#38BDF8"/>
+  <path d="M250 240C250 230.059 258.059 222 268 222H278C287.941 222 296 230.059 296 240V272C296 282.493 287.493 291 277 291H268C258.059 291 250 282.941 250 273V240Z" fill="#818CF8"/>
+  
+  <!-- "ps" text -->
+  <path d="M358 237C358 228.163 350.837 221 342 221H332C323.163 221 316 228.163 316 237V275C316 283.837 323.163 291 332 291H342C350.837 291 358 283.837 358 275V237Z" fill="#60A5FA"/>
+  <path d="M358 256L332 291H342C350.837 291 358 283.837 358 275V237C358 228.163 350.837 221 342 221H332C350.837 221 358 228.163 358 237V256Z" fill="white"/>
+  <path d="M374 236C374 227.163 381.163 220 390 220H400C408.837 220 416 227.163 416 236V250C416 258.837 408.837 266 400 266H390H374V236Z" fill="#38BDF8"/>
+  <path d="M374 266C374 257.163 381.163 250 390 250H400C408.837 250 416 257.163 416 266V276C416 284.837 408.837 292 400 292H390C381.163 292 374 284.837 374 276V266Z" fill="white"/>
+  
+  <!-- Decorative tech elements -->
+  <circle cx="160" cy="160" r="12" fill="#8B5CF6" opacity="0.5" />
+  <circle cx="352" cy="160" r="12" fill="#8B5CF6" opacity="0.5" />
+  <circle cx="160" cy="352" r="12" fill="#8B5CF6" opacity="0.5" />
+  <circle cx="352" cy="352" r="12" fill="#8B5CF6" opacity="0.5" />
+  
+  <!-- Decorative lines -->
+  <line x1="168" y1="160" x2="240" y2="160" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="272" y1="160" x2="344" y2="160" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="160" y1="168" x2="160" y2="240" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="160" y1="272" x2="160" y2="344" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="352" y1="168" x2="352" y2="240" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="352" y1="272" x2="352" y2="344" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="168" y1="352" x2="240" y2="352" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  <line x1="272" y1="352" x2="344" y2="352" stroke="#4F46E5" stroke-width="2" stroke-dasharray="4 4" opacity="0.4" />
+  
+  <!-- Glowing spot for emphasis -->
+  <circle cx="256" cy="256" r="80" fill="url(#glowGrad)" opacity="0.3" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="50%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#0EA5E9" />
+    </linearGradient>
+    
+    <radialGradient id="innerGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#4F46E5" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#1E1B4B" stop-opacity="0.3" />
+    </radialGradient>
+    
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#4F46E5" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>
