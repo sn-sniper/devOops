@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import iconPath from "@/assets/ICON.png";
 
 export function Loader() {
   const [isLoading, setIsLoading] = useState(true);
-  
+
   useEffect(() => {
     // Set a timer to remove the loader after a few seconds
     const timer = setTimeout(() => {
@@ -20,10 +21,10 @@ export function Loader() {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 0.3 + (i * 0.1),
+        delay: 0.3 + i * 0.1,
         duration: 0.4,
-        ease: "easeOut"
-      }
+        ease: "easeOut",
+      },
     }),
     exit: (i) => ({
       opacity: 0,
@@ -31,35 +32,29 @@ export function Loader() {
       transition: {
         delay: i * 0.05,
         duration: 0.3,
-        ease: "easeIn"
-      }
-    })
+        ease: "easeIn",
+      },
+    }),
   };
 
   // Container animations
   const containerVariants = {
     initial: { opacity: 1 },
-    exit: { 
-      opacity: 0, 
-      transition: { 
+    exit: {
+      opacity: 0,
+      transition: {
         delay: 0.5,
-        duration: 0.8, 
-        ease: "easeInOut" 
-      } 
-    }
+        duration: 0.8,
+        ease: "easeInOut",
+      },
+    },
   };
 
-  // Define letter colors
-  const letters = ['d', 'e', 'v', 'O', 'o', 'p', 's'];
-  const letterColors = [
-    'text-white',
-    'text-devoops-cyan',
-    'text-devoops-blue',
-    'text-indigo-500',
-    'text-devoops-blue',
-    'text-devoops-cyan',
-    'text-white'
-  ];
+  // Define letter and icon parts
+  const leftLetters = ["D", "E", "V"];
+  const rightLetters = [ "P", "S"];
+  const leftColors = ["text-white", "text-devoops-cyan", "text-devoops-blue"];
+  const rightColors = [ "text-devoops-cyan", "text-white"];
 
   // Big circle animation for immersive effect
   const bigCircleVariants = {
@@ -71,9 +66,36 @@ export function Loader() {
         delay: 2.5,
         duration: 1.5,
         ease: [0.16, 1, 0.3, 1], // Cinematic easing
-        times: [0, 0.2, 1]
-      }
-    }
+        times: [0, 0.2, 1],
+      },
+    },
+  };
+
+  // Icon animation
+  const iconVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.6,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+    pulse: {
+      scale: [1, 1.1, 1],
+      filter: [
+        "drop-shadow(0 0 5px rgba(79, 70, 229, 0.5))",
+        "drop-shadow(0 0 15px rgba(79, 70, 229, 0.8))",
+        "drop-shadow(0 0 5px rgba(79, 70, 229, 0.5))",
+      ],
+      transition: {
+        duration: 2,
+        repeat: 2,
+        repeatType: "reverse",
+      },
+    },
   };
 
   // Rising small particles
@@ -90,89 +112,111 @@ export function Loader() {
           variants={containerVariants}
         >
           {/* Background ambient glow */}
-          <motion.div 
+          <motion.div
             className="absolute h-96 w-96 rounded-full opacity-20"
             style={{
-              background: 'radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, rgba(0, 0, 0, 0) 70%)'
+              background:
+                "radial-gradient(circle, rgba(79, 70, 229, 0.3) 0%, rgba(0, 0, 0, 0) 70%)",
             }}
-            animate={{ 
+            animate={{
               scale: [1, 1.2, 1],
             }}
             transition={{
               duration: 4,
               repeat: Infinity,
-              repeatType: "reverse"
+              repeatType: "reverse",
             }}
           />
-          
+
           {/* Logo container with scale animation */}
-          <motion.div 
+          <motion.div
             className="relative"
             initial={{ scale: 1 }}
-            animate={{ 
+            animate={{
               scale: [1, 1, 1.8],
             }}
             transition={{
               duration: 2.5,
               times: [0, 0.6, 1],
               ease: "easeOut",
-              delay: 1.5
+              delay: 1.5,
             }}
           >
-            {/* Letters */}
-            <div className="flex items-center justify-center space-x-1 md:space-x-2 text-5xl md:text-7xl font-bold">
-              {letters.map((letter, i) => {
-                const isMiddleO = i === 3;
-                
-                return (
-                  <motion.div
-                    key={i}
-                    className={`${letterColors[i]} inline-block ${isMiddleO ? 'relative z-10' : ''}`}
-                    custom={i}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    variants={letterVariants}
-                    style={isMiddleO ? { 
-                      fontSize: '1.4em', 
-                      fontWeight: 800,
-                      position: 'relative',
-                      top: '-5px',
-                      filter: 'drop-shadow(0 0 8px rgba(76, 29, 149, 0.8))'
-                    } : {}}
-                  >
-                    {letter}
-                    
-                    {/* Glow effect for the middle O */}
-                    {isMiddleO && (
-                      <motion.div 
-                        className="absolute inset-0 rounded-full bg-indigo-500 opacity-30 blur-md -z-10"
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ 
-                          scale: [1, 1.5, 1],
-                          opacity: [0.3, 0.7, 0.3],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: 2,
-                          repeatType: "reverse"
-                        }}
-                      />
-                    )}
-                  </motion.div>
-                );
-              })}
+            {/* Logo with Icon in the middle */}
+            <div className="flex items-center justify-center space-x-1 md:space-x-2 text-5xl md:text-7xl font-bold relative">
+              {/* Left side letters */}
+              {leftLetters.map((letter, i) => (
+                <motion.div
+                  key={`left-${i}`}
+                  className={`${leftColors[i]} inline-block`}
+                  custom={i}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={letterVariants}
+                >
+                  {letter}
+                </motion.div>
+              ))}
+
+              {/* Middle icon */}
+              <motion.div
+                className="relative z-10 mx-1 h-16 w-16 md:h-20 md:w-20 inline-flex justify-center items-center"
+                initial="hidden"
+                animate={["visible", "pulse"]}
+                variants={iconVariants}
+                style={{
+                  position: "relative",
+                  top: "-5px",
+                }}
+              >
+                <img
+                  src={iconPath}
+                  alt="DevOops Icon"
+                  className="w-full h-full object-contain"
+                />
+
+                {/* Glow effect for the icon */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-indigo-500 opacity-30 blur-md -z-10"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.3, 0.7, 0.3],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: 2,
+                    repeatType: "reverse",
+                  }}
+                />
+              </motion.div>
+
+              {/* Right side letters */}
+              {rightLetters.map((letter, i) => (
+                <motion.div
+                  key={`right-${i}`}
+                  className={`${rightColors[i]} inline-block`}
+                  custom={i + leftLetters.length + 1} // Offset for animation timing
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  variants={letterVariants}
+                >
+                  {letter}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
-          
-          {/* Diving into the O effect */}
+
+          {/* Diving into the icon effect */}
           <motion.div
             className="absolute w-80 h-80 rounded-full bg-indigo-500/10"
             variants={bigCircleVariants}
             initial="hidden"
             animate="visible"
           />
-          
+
           {/* Tech-inspired circular rings */}
           <div className="absolute w-60 h-60">
             {[0, 1, 2].map((ring) => (
@@ -186,22 +230,22 @@ export function Loader() {
                   top: `-${ring * 20}%`,
                 }}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ 
+                animate={{
                   opacity: [0.2, 0.4, 0.2],
                   scale: [1, 1.05, 1],
-                  rotate: [0, 180]
+                  rotate: [0, 180],
                 }}
                 transition={{
                   duration: 6 - ring,
                   repeat: Infinity,
                   repeatType: "loop",
                   ease: "linear",
-                  delay: ring * 0.3
+                  delay: ring * 0.3,
                 }}
               />
             ))}
           </div>
-          
+
           {/* Floating particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {particles.map((_, i) => {
@@ -209,7 +253,7 @@ export function Loader() {
               const x = Math.random() * 100;
               const delay = Math.random() * 2;
               const duration = Math.random() * 2 + 2;
-              
+
               return (
                 <motion.div
                   key={i}
@@ -219,41 +263,43 @@ export function Loader() {
                     width: size,
                     height: size,
                     opacity: Math.random() * 0.5 + 0.3,
-                    backgroundColor: i % 3 === 0 
-                      ? '#4f46e5' 
-                      : i % 3 === 1 
-                        ? '#60a5fa' 
-                        : '#93c5fd'
+                    backgroundColor:
+                      i % 3 === 0
+                        ? "#4f46e5"
+                        : i % 3 === 1
+                        ? "#60a5fa"
+                        : "#93c5fd",
                   }}
-                  initial={{ y: '110vh' }}
-                  animate={{ y: '-10vh' }}
+                  initial={{ y: "110vh" }}
+                  animate={{ y: "-10vh" }}
                   transition={{
                     duration,
                     delay,
                     repeat: Infinity,
-                    repeatType: 'loop',
-                    ease: 'linear'
+                    repeatType: "loop",
+                    ease: "linear",
                   }}
                 />
               );
             })}
           </div>
-          
+
           {/* Digital noise overlay */}
-          <motion.div 
+          <motion.div
             className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay"
             style={{
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 400 400\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-              backgroundSize: 'cover'
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+              backgroundSize: "cover",
             }}
             animate={{
               opacity: [0.1, 0.15, 0.1],
-              backgroundPosition: ['0% 0%', '100% 100%']
+              backgroundPosition: ["0% 0%", "100% 100%"],
             }}
             transition={{
               duration: 8,
               repeat: Infinity,
-              repeatType: "mirror"
+              repeatType: "mirror",
             }}
           />
         </motion.div>

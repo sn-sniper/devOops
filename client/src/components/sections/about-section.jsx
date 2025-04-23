@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useGsapReveal } from "@/hooks/use-gsap-reveal";
 import { useIsMobile } from "@/hooks/use-mobile";
 import gsap from "gsap";
+import Image from "@/assets/h5_img-1.jpg";
 
 export function AboutSection() {
   const contentRef = useRef(null);
@@ -160,39 +161,43 @@ export function AboutSection() {
     <section id="about" className="py-20 md:py-32 px-8 bg-slate-950">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-16">
-          <div
-            className="lg:w-1/2"
-            data-animation="reveal"
-            ref={contentRef}
-          >
+          <div className="lg:w-1/2" data-animation="reveal" ref={contentRef}>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">
-              Merging engineering with exceptional user experience
+              Merging creativity with exceptional user experience
             </h2>
             <p className="text-lg text-gray-300 mb-6">
-              Founded in 2020, devOops is a specialized development agency focused on
-              creating robust, secure, and user-friendly software solutions. We excel at
-              the intersection of technical excellence and intuitive design.
+              Founded in 2025, devOops is built on a solid foundation of over a
+              year and a half of successful freelance collaboration.Our team
+              blends deep technical knowledge with a passion for clean,
+              user-centric design to craft powerful digital experiences.
             </p>
             <p className="text-lg text-gray-300 mb-8">
-              Our team of developers, engineers, and UX specialists brings extensive
-              expertise in mobile app development, desktop software, cybersecurity,
-              and web solutions to deliver products that exceed expectations and stand
-              the test of time.
+              With proven expertise across frontend and backend development,
+              mobile applications, UI/UX design, and secure coding practices, we
+              bring versatility and precision to every project. Our growing
+              experience in cybersecurity also ensures the reliability and
+              resilience of the solutions we build.
             </p>
             <div className="flex flex-wrap gap-6">
               <div>
                 <h3 className="text-5xl font-bold text-devoops-blue mb-2">
-                  75+
+                  95%
                 </h3>
-                <p className="text-gray-300">Projects delivered</p>
+                <p className="text-gray-300">Customer Satisfaction Rate</p>
               </div>
               <div>
-                <h3 className="text-5xl font-bold text-devoops-cyan mb-2">20</h3>
-                <p className="text-gray-300">Expert developers</p>
+                <h3 className="text-5xl font-bold text-devoops-cyan mb-2">
+                  85%
+                </h3>
+                <p className="text-gray-300">
+                  Projects Completed Within Budget
+                </p>
               </div>
               <div>
-                <h3 className="text-5xl font-bold text-devoops-blue mb-2">6</h3>
-                <p className="text-gray-300">Industry awards</p>
+                <h3 className="text-5xl font-bold text-devoops-blue mb-2">
+                  95%
+                </h3>
+                <p className="text-gray-300">Positive Feedback on Design</p>
               </div>
             </div>
           </div>
@@ -201,30 +206,32 @@ export function AboutSection() {
             data-animation="reveal-delay"
             ref={imageRef}
           >
-            <div 
+            <div
               className="relative aspect-square rounded-xl overflow-hidden cursor-pointer"
               ref={imageContainerRef}
-              style={{ 
-                transformStyle: "preserve-3d", 
+              style={{
+                transformStyle: "preserve-3d",
                 willChange: "transform",
               }}
             >
               <div className="w-full h-full rounded-xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src={Image}
                   alt="Team of developers working together"
                   className="w-full h-full object-cover"
                   style={{ transformStyle: "preserve-3d" }}
                 />
               </div>
-              
+
               {/* Add subtle shadow that moves with tilt */}
-              <div 
+              <div
                 className="absolute inset-0 rounded-xl shadow-lg shadow-element"
-                style={{ 
+                style={{
                   boxShadow: `0 20px 30px rgba(0, 0, 0, 0.4), 
-                             ${rotateY * -1}px ${rotateX}px 30px rgba(0, 0, 0, 0.3)`,
-                  transition: "box-shadow 0.2s ease-out"
+                             ${
+                               rotateY * -1
+                             }px ${rotateX}px 30px rgba(0, 0, 0, 0.3)`,
+                  transition: "box-shadow 0.2s ease-out",
                 }}
               />
             </div>
@@ -241,7 +248,8 @@ export function AboutSection() {
               }}
             >
               <p className="text-lg font-medium">
-                "Building software that works securely, reliably, and intuitively"
+                "Building softwares that works securely, reliably, and
+                intuitively"
               </p>
             </motion.div>
           </div>

@@ -67,7 +67,7 @@ export function Navbar({ toggleMenu }) {
       </div>
       <div className="block md:hidden">
         <button
-          className="text-white hover:text-devoops-cyan focus:outline-none transition-colors"
+          className="text-white hover:text-devoops-indigo focus:outline-none transition-colors"
           onClick={toggleMenu}
           aria-label="Open menu"
         >

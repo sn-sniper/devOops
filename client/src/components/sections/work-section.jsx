@@ -110,7 +110,7 @@ export function WorkSection() {
 
         <div className="mt-16 text-center">
           <a
-            href="#"
+            href="/projects"
             className="inline-flex items-center text-lg font-medium text-white group"
           >
             <span className="link-hover-effect">View all projects</span>

@@ -24,20 +24,24 @@ export function HeroSection() {
           className="text-4xl md:text-7xl lg:text-8xl font-bold text-center leading-tight"
           ref={addToRefs}
         >
-          <span className="block">Developing powerful</span>
-          <span className="block text-glow">
-            solutions <span className="text-devoops-blue">that</span>
+          <span className="block">Secure your vision</span>
+          <span className="block">
+            with our
+            <span className="text-devoops-cyan text-glow"> Algorithms.</span>
           </span>
           <span className="block">
-            <span className="text-devoops-cyan">transform</span> & secure
+            Code. <span className="text-devoops-blue">Create. </span>
+            <span className="text-devoops-indigo text-glow">Elevate</span>!
           </span>
         </h1>
         <p
           className="mt-8 text-xl md:text-2xl text-center text-gray-300 max-w-3xl"
           ref={addToRefs}
         >
-          We're a development agency specializing in UI/UX designs, mobile apps, 
-          desktop software, and secure web solutions using cutting-edge technologies.
+          At devoops, we don't just write code — we build software that's
+          intuitive, secure, and designed to scale. Whether it's a sleek mobile
+          app or a full-stack web platform, we deliver products that work hard
+          and look good doing it.
         </p>
         <motion.div
           className="mt-12"
