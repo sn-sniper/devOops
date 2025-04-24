@@ -52,9 +52,9 @@ export function Loader() {
 
   // Define letter and icon parts
   const leftLetters = ["D", "E", "V"];
-  const rightLetters = [ "P", "S"];
+  const rightLetters = ["P", "S"];
   const leftColors = ["text-white", "text-devoops-cyan", "text-devoops-blue"];
-  const rightColors = [ "text-devoops-cyan", "text-white"];
+  const rightColors = ["text-devoops-cyan", "text-white"];
 
   // Big circle animation for immersive effect
   const bigCircleVariants = {
@@ -71,20 +71,29 @@ export function Loader() {
     },
   };
 
-  // Icon animation
+  // Icon animation - matched with letters
   const iconVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: {
-        delay: 0.6,
-        duration: 0.5,
+        delay: 0.3 + i * 0.1,
+        duration: 0.4,
         ease: "easeOut",
       },
-    },
+    }),
+    exit: (i) => ({
+      opacity: 0,
+      y: -20,
+      transition: {
+        delay: i * 0.05,
+        duration: 0.3,
+        ease: "easeIn",
+      },
+    }),
     pulse: {
-      scale: [1, 1.1, 1],
+      scale: [1, 1.05, 1],
       filter: [
         "drop-shadow(0 0 5px rgba(79, 70, 229, 0.5))",
         "drop-shadow(0 0 15px rgba(79, 70, 229, 0.8))",
@@ -92,7 +101,7 @@ export function Loader() {
       ],
       transition: {
         duration: 2,
-        repeat: 2,
+        repeat: 1,
         repeatType: "reverse",
       },
     },
@@ -163,8 +172,10 @@ export function Loader() {
               <motion.div
                 className="relative z-10 mx-1 h-16 w-16 md:h-20 md:w-20 inline-flex justify-center items-center"
                 initial="hidden"
-                animate={["visible", "pulse"]}
+                animate="visible"
+                exit="exit"
                 variants={iconVariants}
+                custom={3} // Position 3 for icon (middle of DEV and OPS)
                 style={{
                   position: "relative",
                   top: "-5px",
@@ -177,7 +188,7 @@ export function Loader() {
                 />
 
                 {/* Glow effect for the icon */}
-                <motion.div
+                {/* <motion.div
                   className="absolute inset-0 rounded-full bg-indigo-500 opacity-30 blur-md -z-10"
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{
@@ -189,7 +200,7 @@ export function Loader() {
                     repeat: 2,
                     repeatType: "reverse",
                   }}
-                />
+                /> */}
               </motion.div>
 
               {/* Right side letters */}

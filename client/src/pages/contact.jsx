@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Loader } from "@/components/ui/loader";
+// import { Loader } from "@/components/ui/loader";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -408,7 +408,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-devoops-dark overflow-x-hidden">
-      <Loader />
+      {/* <Loader /> */}
       <CustomCursor />
       <Navbar toggleMenu={toggleMenu} />
       <MobileMenu isOpen={mobileMenuOpen} onClose={closeMenu} />

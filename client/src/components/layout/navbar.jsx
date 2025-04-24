@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Logo } from "../ui/logo";
 
 export function Navbar({ toggleMenu }) {
@@ -28,18 +29,18 @@ export function Navbar({ toggleMenu }) {
         <Logo size="lg" />
       </div>
       <div className="hidden md:flex space-x-8">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           Home
-        </a>
-        <a
-          href="/projects"
+        </Link>
+        <Link
+          to="/projects"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           Projects
-        </a>
+        </Link>
         <a
           href="#about"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
@@ -58,16 +59,16 @@ export function Navbar({ toggleMenu }) {
         >
           FAQ
         </a>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           Contact
-        </a>
+        </Link>
       </div>
       <div className="block md:hidden">
         <button
-          className="text-white hover:text-devoops-indigo focus:outline-none transition-colors"
+          className="text-white hover:text-devoops-cyan focus:outline-none transition-colors"
           onClick={toggleMenu}
           aria-label="Open menu"
         >

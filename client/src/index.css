@@ -49,7 +49,10 @@
 
   /* Custom Utility Classes */
   .text-glow {
-    text-shadow: 0 0 15px rgba(0, 120, 255, 0.7);
+    text-shadow: 0 0 15px #0078ffb3;
+  }
+  .text-glow2 {
+    text-shadow: 0 0 15px #636EDFb3;
   }
 
   .scroll-indicator {

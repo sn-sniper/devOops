@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { CustomCursor } from "@/components/ui/custom-cursor";
-import { Loader } from "@/components/ui/loader";
+// import { Loader } from "@/components/ui/loader";
 import { Navbar } from "@/components/layout/navbar";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { Footer } from "@/components/layout/footer";
@@ -84,7 +84,7 @@ export default function Projects() {
 
   return (
     <div className="overflow-x-hidden bg-slate-950 min-h-screen">
-      <Loader />
+      {/* <Loader /> */}
       <CustomCursor />
       <Navbar toggleMenu={toggleMenu} />
       <MobileMenu isOpen={mobileMenuOpen} onClose={closeMenu} />
@@ -164,12 +164,6 @@ export default function Projects() {
                       <span>{project.client}</span>
                       <span>{project.year}</span>
                     </div>
-                    <a
-                      href={project.link}
-                      className="mt-5 inline-block bg-devoops-blue hover:bg-devoops-blue/90 text-white py-2 px-6 rounded-full transition-colors duration-300"
-                    >
-                      View Details
-                    </a>
                   </div>
                 </motion.div>
               ))}

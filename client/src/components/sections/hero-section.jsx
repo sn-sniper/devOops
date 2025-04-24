@@ -31,7 +31,7 @@ export function HeroSection() {
           </span>
           <span className="block">
             Code. <span className="text-devoops-blue">Create. </span>
-            <span className="text-devoops-indigo text-glow">Elevate</span>!
+            <span className="text-devoops-indigo text-glow2">Elevate</span>!
           </span>
         </h1>
         <p
