@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Typewriter from "typewriter-effect";
 import { HeroCanvas } from "../three/hero-canvas";
 import { useGsapReveal } from "@/hooks/use-gsap-reveal";
 
@@ -29,19 +30,158 @@ export function HeroSection() {
             with our
             <span className="text-devoops-cyan text-glow"> Algorithms.</span>
           </span>
-          <span className="block">
-            Code. <span className="text-devoops-blue">Create. </span>
-            <span className="text-devoops-indigo text-glow2">Elevate</span>!
+          <span className="block typewriter-container">
+            <div className="inline-flex">
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter
+                    //first phrase
+                    .typeString("C")
+                    .pauseFor(100)
+                    .typeString("o")
+                    .pauseFor(100)
+                    .typeString("d")
+                    .pauseFor(100)
+                    .typeString("e")
+                    .pauseFor(100)
+                    .typeString(".")
+                    .pauseFor(200)
+                    .typeString(" ")
+
+                    .typeString('<span class="text-devoops-blue">C</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">r</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">e</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">a</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">t</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">e</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">.</span>')
+                    .pauseFor(200)
+                    .typeString(" ")
+
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">E</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">l</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">e</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">v</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">a</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">t</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">e</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">!</span>'
+                    )
+                    .pauseFor(2000)
+                    .deleteAll()
+                    //second phrase
+                    .typeString("D")
+                    .pauseFor(100)
+                    .typeString("e")
+                    .pauseFor(100)
+                    .typeString("s")
+                    .pauseFor(100)
+                    .typeString("i")
+                    .pauseFor(100)
+                    .typeString("g")
+                    .pauseFor(100)
+                    .typeString("n")
+                    .pauseFor(100)
+                    .typeString(".")
+                    .pauseFor(200)
+                    .typeString(" ")
+
+                    .typeString('<span class="text-devoops-blue">D</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">e</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">v</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">e</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">l</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">o</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">p</span>')
+                    .pauseFor(100)
+                    .typeString('<span class="text-devoops-blue">.</span>')
+                    .pauseFor(200)
+                    .typeString(" ")
+
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">D</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">e</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">p</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">l</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">o</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">y</span>'
+                    )
+                    .pauseFor(100)
+                    .typeString(
+                      '<span class="text-devoops-indigo text-glow2">!</span>'
+                    )
+                    .pauseFor(2000)
+                    .deleteAll()
+                    .start();
+                }}
+                options={{
+                  loop: true,
+                  delay: 30, // Faster base typing speed
+                  deleteSpeed: 15, // Faster deletion speed
+                  autoStart: true,
+                  stringSplitter: (text) => {
+                    return text.split(/(<\/?span.*?>)/g).filter(Boolean);
+                  },
+                  html: true,
+                }}
+              />
+            </div>
           </span>
         </h1>
         <p
           className="mt-8 text-xl md:text-2xl text-center text-gray-300 max-w-3xl"
           ref={addToRefs}
         >
-          At devoops, we don't just write code — we build software that's
-          intuitive, secure, and designed to scale. Whether it's a sleek mobile
-          app or a full-stack web platform, we deliver products that work hard
-          and look good doing it.
+          Devoops: Crafting code into powerful, beautiful software that scales.
         </p>
         <motion.div
           className="mt-12"
