@@ -189,12 +189,12 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          <a
+          {/* <a
             href="#work"
             className="px-8 py-4 bg-devoops-blue text-white rounded-full text-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105"
           >
             Explore Our Projects
-          </a>
+          </a> */}
         </motion.div>
       </div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">

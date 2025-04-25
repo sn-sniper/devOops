@@ -6,15 +6,25 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Contact from "@/pages/contact";
-import Projects from "@/pages/projects";
-// import { Loader } from "@/components/ui/loader";
+import Services from "@/pages/services";
+import { Loader } from "@/components/ui/loader";
+
+// HomeWrapper component to include the loader only for the home page
+function HomeWrapper() {
+  return (
+    <>
+      <Loader />
+      <Home />
+    </>
+  );
+}
 
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<HomeWrapper />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/projects" element={<Projects />} />
+      <Route path="/services" element={<Services />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

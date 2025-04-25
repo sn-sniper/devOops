@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Logo } from "../ui/logo";
 
 export function MobileMenu({ isOpen, onClose }) {
@@ -13,20 +14,20 @@ export function MobileMenu({ isOpen, onClose }) {
         <div className="absolute top-10 left-0 w-full flex justify-center">
           <Logo size="xl" withGlow={true} />
         </div>
-        <a
-          href="/"
+        <Link
+          to="/"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
           onClick={onClose}
         >
           Home
-        </a>
-        <a
-          href="/projects"
+        </Link>
+        <Link
+          to="/services"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-cyan transition-all"
           onClick={onClose}
         >
-          Projects
-        </a>
+          Services
+        </Link>
         <a
           href="#about"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
@@ -35,26 +36,19 @@ export function MobileMenu({ isOpen, onClose }) {
           About
         </a>
         <a
-          href="#services"
-          className="text-3xl font-bold text-white opacity-80 hover:text-devoops-cyan transition-all"
-          onClick={onClose}
-        >
-          Services
-        </a>
-        <a
           href="#faq"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
           onClick={onClose}
         >
           FAQ
         </a>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-cyan transition-all"
           onClick={onClose}
         >
           Contact
-        </a>
+        </Link>
         <button
           className="absolute top-8 right-8 text-white hover:text-devoops-cyan transition-colors"
           onClick={onClose}

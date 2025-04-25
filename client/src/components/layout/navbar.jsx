@@ -36,22 +36,16 @@ export function Navbar({ toggleMenu }) {
           Home
         </Link>
         <Link
-          to="/projects"
+          to="/services"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
-          Projects
+          Services
         </Link>
         <a
           href="#about"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           About
-        </a>
-        <a
-          href="#services"
-          className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
-        >
-          Services
         </a>
         <a
           href="#faq"

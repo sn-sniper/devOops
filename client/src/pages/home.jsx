@@ -4,7 +4,6 @@ import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { HeroSection } from "@/components/sections/hero-section";
-import { WorkSection } from "@/components/sections/work-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { MarqueeSection } from "@/components/sections/marquee-section";
@@ -15,7 +14,7 @@ import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   useSmoothScroll();
 
   const toggleMenu = () => {
@@ -33,7 +32,6 @@ export default function Home() {
       <Navbar toggleMenu={toggleMenu} />
       <MobileMenu isOpen={mobileMenuOpen} onClose={closeMenu} />
       <HeroSection />
-      <WorkSection />
       <AboutSection />
       <ServicesSection />
       <MarqueeSection />
