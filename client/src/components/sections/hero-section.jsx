@@ -165,8 +165,8 @@ export function HeroSection() {
                 }}
                 options={{
                   loop: true,
-                  delay: 30, // Faster base typing speed
-                  deleteSpeed: 15, // Faster deletion speed
+                  delay: 15, 
+                  deleteSpeed: 15, 
                   autoStart: true,
                   stringSplitter: (text) => {
                     return text.split(/(<\/?span.*?>)/g).filter(Boolean);

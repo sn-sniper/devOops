@@ -11,9 +11,6 @@ export function MobileMenu({ isOpen, onClose }) {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="h-full flex flex-col justify-center items-center space-y-12 p-8">
-        <div className="absolute top-10 left-0 w-full flex justify-center">
-          <Logo size="xl" withGlow={true} />
-        </div>
         <Link
           to="/"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
