@@ -7,8 +7,9 @@ import { Footer } from "@/components/layout/footer";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 import { useToast } from "@/hooks/use-toast";
+import { services } from "@/data/services";
+import { handleContactSubmit } from "@/lib/utils";
 
-// Custom Select Component
 const CustomSelect = ({ label, options, value, onChange, required }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
@@ -198,7 +199,7 @@ const AnimatedInput = ({
       {/* Underline effect */}
       <div className="absolute bottom-0 left-0 h-[2px] bg-gray-600 w-full">
         <motion.div
-          className="h-full bg-gradient-to-r from-devoops-blue to-devoops-cyan"
+          className="h-full bg-gradient-to-r from-devoops-indigo to-devoops-blue"
           initial={{ width: 0 }}
           animate={{ width: isFocused ? "100%" : "0%" }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -214,7 +215,7 @@ const AnimatedInput = ({
           color: isFocused
             ? "rgb(56, 189, 248)" // cyan-400
             : isPopulated
-            ? "rgb(94, 234, 212)" // teal-300
+            ? "#636EDF" // devoops-indigo
             : "rgb(156, 163, 175)", // gray-400
         }}
         transition={{
@@ -240,8 +241,6 @@ const AnimatedInput = ({
         className="w-full pt-3 pb-2 px-1 bg-transparent border-0 border-b-0 text-white focus:outline-none transition-all duration-300 text-lg"
         required={required}
       />
-
-      {/* Input Highlight Effect */}
     </div>
   );
 };
@@ -324,11 +323,12 @@ const AnimatedTextarea = ({ name, label, required, value, onChange }) => {
 export default function Contact() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formState, setFormState] = useState({
-    name: "",
+    first_name: "",
+    last_name: "",
     email: "",
     company: "",
     service: "",
-    message: "",
+    // message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -354,36 +354,40 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      await handleContactSubmit(formState);
 
-    // Success message
-    toast({
-      title: "Message sent!",
-      description: "We've received your message and will get back to you soon.",
-    });
+      toast({
+        title: "Message sent!",
+        description:
+          "We've received your message and will get back to you soon.",
+      });
 
-    // Reset form
-    setFormState({
-      name: "",
-      email: "",
-      company: "",
-      service: "",
-      message: "",
-    });
+      console.log("Form submitted:", formState);
 
-    setIsSubmitting(false);
+      setFormState({
+        first_name: "",
+        last_name: "",
+        email: "",
+        company: "",
+        service: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+
+      toast({
+        title: "Something went wrong.",
+        description: "Please try again later.",
+        variant: "destructive", // depends on your toast system
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  // Service options for select
-  const serviceOptions = [
-    "UI/UX Design",
-    "Mobile App Development",
-    "Web Development",
-    "Custom Software",
-    "E-commerce Solutions",
-    "Other",
-  ];
+
+  // Service options pulled directly from services.js
+  const serviceOptions = services.map((service) => service.title);
 
   // Animation variants
   const pageVariants = {
@@ -510,7 +514,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-white">Email</h3>
-                    <p className="text-gray-300">hello@devoops.dev</p>
+                    <p className="text-gray-300">support@devoops.dev</p>
                   </div>
                 </div>
 
@@ -586,11 +590,18 @@ export default function Contact() {
               </h2>
               <form onSubmit={handleSubmit}>
                 <AnimatedInput
-                  name="name"
-                  label="Your Name"
+                  name="first_name"
+                  label="Your First Name"
                   required
-                  value={formState.name}
-                  onChange={(value) => handleInputChange("name", value)}
+                  value={formState.first_name}
+                  onChange={(value) => handleInputChange("first_name", value)}
+                />
+                <AnimatedInput
+                  name="last_name"
+                  label="Your Last Name"
+                  required
+                  value={formState.last_name}
+                  onChange={(value) => handleInputChange("last_name", value)}
                 />
 
                 <AnimatedInput
@@ -602,13 +613,6 @@ export default function Contact() {
                   onChange={(value) => handleInputChange("email", value)}
                 />
 
-                <AnimatedInput
-                  name="company"
-                  label="Company Name"
-                  value={formState.company}
-                  onChange={(value) => handleInputChange("company", value)}
-                />
-
                 <CustomSelect
                   options={serviceOptions}
                   value={formState.service}
@@ -616,13 +620,20 @@ export default function Contact() {
                   required
                 />
 
-                <AnimatedTextarea
+                <AnimatedInput
+                  name="company"
+                  label="Company Name"
+                  value={formState.company}
+                  onChange={(value) => handleInputChange("company", value)}
+                />
+
+                {/* <AnimatedTextarea
                   name="message"
                   label="Your Message"
                   required
                   value={formState.message}
                   onChange={(value) => handleInputChange("message", value)}
-                />
+                /> */}
 
                 <motion.button
                   type="submit"

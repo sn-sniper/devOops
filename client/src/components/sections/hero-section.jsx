@@ -181,21 +181,14 @@ export function HeroSection() {
           className="mt-8 text-xl md:text-2xl text-center text-gray-300 max-w-3xl"
           ref={addToRefs}
         >
-          Devoops: Crafting code into powerful, beautiful software that scales.
+          We don't just ship code — we craft experiences that scale.{" "}
         </p>
         <motion.div
           className="mt-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-        >
-          {/* <a
-            href="#work"
-            className="px-8 py-4 bg-devoops-blue text-white rounded-full text-lg font-medium hover:bg-opacity-90 transition-all transform hover:scale-105"
-          >
-            Explore Our Projects
-          </a> */}
-        </motion.div>
+        ></motion.div>
       </div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
         <div className="scroll-indicator">
