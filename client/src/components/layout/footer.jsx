@@ -193,8 +193,8 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#work"
-                  className="text-gray-400 transition-colors flex items-center"
+                  href="/"
+                  className="text-gray-400 hover:text-devoops-white transition-colors flex items-center"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -210,13 +210,13 @@ export function Footer() {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                  Projects
+                  Home
                 </a>
               </li>
               <li>
                 <a
                   href="#about"
-                  className="text-gray-400 transition-colors flex items-center"
+                  className="text-gray-400 hover:text-devoops-white transition-colors flex items-center"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -237,8 +237,8 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
-                  className="text-gray-400 transition-colors flex items-center"
+                  href="/services"
+                  className="text-gray-400 hover:text-devoops-white transition-colors flex items-center"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -260,7 +260,7 @@ export function Footer() {
               <li>
                 <a
                   href="#faq"
-                  className="text-gray-400 transition-colors flex items-center"
+                  className="text-gray-400 hover:text-devoops-white transition-colors flex items-center"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -282,7 +282,7 @@ export function Footer() {
               <li>
                 <a
                   href="/contact"
-                  className="text-gray-400 transition-colors flex items-center"
+                  className="text-gray-400 hover:text-devoops-white transition-colors flex items-center"
                 >
                   <svg
                     className="w-4 h-4 mr-2"
@@ -442,7 +442,8 @@ export function Footer() {
               with you.
             </p>
             <p className="text-gray-400 mb-4">
-              A calendar will be sent to you so you can book a suitable time for you.
+              A calendar will be sent to you so you can book a suitable time for
+              you.
             </p>
 
             <form className="flex flex-col sm:flex-row gap-2 mb-6">
