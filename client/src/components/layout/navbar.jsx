@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Logo } from "../ui/logo";
 
 export function Navbar({ toggleMenu }) {
   const [scrolled, setScrolled] = useState(false);
+
+  const navigate = useNavigate();
+  const handleLogoClick = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +31,7 @@ export function Navbar({ toggleMenu }) {
       }}
     >
       <div className="flex items-center">
-        <Logo size="lg" />
+        <Logo size="lg" onClick={handleLogoClick} />
       </div>
       <div className="hidden md:flex space-x-8">
         <Link
