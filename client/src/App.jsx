@@ -8,8 +8,8 @@ import Home from "@/pages/home";
 import Contact from "@/pages/contact";
 import Services from "@/pages/services";
 import { Loader } from "@/components/ui/loader";
+import { ScrollToTop } from "@/lib/ScrollToTop";
 
-// HomeWrapper component to include the loader only for the home page
 function HomeWrapper() {
   return (
     <>
@@ -23,6 +23,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomeWrapper />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
       <Route path="*" element={<NotFound />} />
@@ -36,6 +37,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <BrowserRouter>
+          <ScrollToTop />
           <AppRoutes />
         </BrowserRouter>
       </TooltipProvider>

@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      <Loader />
+      {/* <Loader /> */}
       <CustomCursor />
       <Navbar toggleMenu={toggleMenu} />
       <MobileMenu isOpen={mobileMenuOpen} onClose={closeMenu} />

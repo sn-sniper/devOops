@@ -12,7 +12,7 @@ export function MobileMenu({ isOpen, onClose }) {
     >
       <div className="h-full flex flex-col justify-center items-center space-y-12 p-8">
         <Link
-          to="/"
+          to="/home"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
           onClick={onClose}
         >
@@ -26,14 +26,14 @@ export function MobileMenu({ isOpen, onClose }) {
           Services
         </Link>
         <a
-          href="#about"
+          href="/home#about"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
           onClick={onClose}
         >
           About
         </a>
         <a
-          href="#faq"
+          href="/home#faq"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
           onClick={onClose}
         >

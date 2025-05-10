@@ -30,7 +30,7 @@ export function Navbar({ toggleMenu }) {
       </div>
       <div className="hidden md:flex space-x-8">
         <Link
-          to="/"
+          to="/home"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           Home
@@ -42,13 +42,13 @@ export function Navbar({ toggleMenu }) {
           Services
         </Link>
         <a
-          href="#about"
+          href="/home#about"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           About
         </a>
         <a
-          href="#faq"
+          href="/home#faq"
           className="nav-item text-white opacity-80 hover:text-devoops-white transition-colors"
         >
           FAQ
