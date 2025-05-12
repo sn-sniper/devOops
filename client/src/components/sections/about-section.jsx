@@ -167,7 +167,7 @@ export function AboutSection() {
             </h2>
             <p className="text-lg text-gray-300 mb-6">
               Founded in 2022, devOops is built on a solid foundation of over a
-              year and a half of successful freelance collaboration.Our team
+              couple of years of successful freelance collaboration. Our team
               blends deep technical knowledge with a passion for clean,
               user-centric design to craft powerful digital experiences.
             </p>

@@ -202,7 +202,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {displayedServices.map((service, index) => {
             const colorClass = service.title.includes("Design")
               ? "devoops-blue"

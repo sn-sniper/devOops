@@ -385,7 +385,6 @@ export default function Contact() {
     }
   };
 
-
   // Service options pulled directly from services.js
   const serviceOptions = services.map((service) => service.title);
 
@@ -514,7 +513,7 @@ export default function Contact() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-medium text-white">Email</h3>
-                    <p className="text-gray-300">support@devoops.dev</p>
+                    <p className="text-gray-300">support@devoops.info</p>
                   </div>
                 </div>
 
