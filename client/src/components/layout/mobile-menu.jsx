@@ -19,26 +19,27 @@ export function MobileMenu({ isOpen, onClose }) {
           Home
         </Link>
         <Link
+          href="/home#about"
+          className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
+          onClick={onClose}
+        >
+          About
+        </Link>
+        <Link
           to="/services"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-cyan transition-all"
           onClick={onClose}
         >
           Services
         </Link>
-        <a
-          href="/home#about"
-          className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
-          onClick={onClose}
-        >
-          About
-        </a>
-        <a
+
+        <Link
           href="/home#faq"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-blue transition-all"
           onClick={onClose}
         >
           FAQ
-        </a>
+        </Link>
         <Link
           to="/contact"
           className="text-3xl font-bold text-white opacity-80 hover:text-devoops-cyan transition-all"

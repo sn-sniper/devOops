@@ -22,7 +22,6 @@ export function MarqueeSection() {
     const marqueeElement = marqueeRef.current;
     if (!marqueeElement) return;
 
-    // Create copy of the marquee content for seamless looping
     const marqueeContent = marqueeElement.querySelector('.marquee-content');
     const marqueeContentClone = marqueeContent.cloneNode(true);
     marqueeElement.appendChild(marqueeContentClone);

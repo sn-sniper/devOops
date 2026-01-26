@@ -40,6 +40,7 @@
   * {
     @apply border-border;
     cursor: none !important;
+    scroll-behavior: smooth;
   }
 
   body {

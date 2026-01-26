@@ -76,7 +76,7 @@ export const services = [
       "MongoDB",
       "PostgreSQL",
       "MSSQL",
-      "GSAP"
+      "GSAP",
     ],
     color: "bg-gradient-to-br from-blue-500 to-teal-500",
   },
@@ -130,12 +130,7 @@ export const services = [
       "Regular backups",
       "24/7 monitoring",
     ],
-    technologies: [
-      "AWS",
-      "Google Cloud",
-      "Microsoft Azure",
-      "Netlify"
-    ],
+    technologies: ["AWS", "Google Cloud", "Microsoft Azure", "Netlify"],
     color: "bg-gradient-to-br from-blue-400 to-blue-600",
   },
   {
@@ -194,9 +189,7 @@ export const services = [
       "Integration with productivity tools",
       "Mobile access",
     ],
-    technologies: [
-
-    ],
+    technologies: [],
     color: "bg-gradient-to-br from-amber-500 to-red-500",
   },
 ];
