@@ -32,8 +32,8 @@ export default function Home() {
       <Navbar toggleMenu={toggleMenu} />
       <MobileMenu isOpen={mobileMenuOpen} onClose={closeMenu} />
       <HeroSection />
-      <AboutSection />
       <ServicesSection />
+      <AboutSection />
       <MarqueeSection />
       <FAQSection />
       <Footer />
